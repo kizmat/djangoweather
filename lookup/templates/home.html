@@ -4,5 +4,17 @@
 {% block content %}
 
 <h1> Hello </h1> 
+<br/>
+
+{{api.0}} <br/><br/>
+
+Air Quality Idex: {{api.0.AQI}} <br/>
+Area: {{api.0.ReportingArea}} <br/>
+AQI Rating: {{api.0.Category.Name}} <br/><br/>
+
+{{api.1}} <br/><br/>
+
+Date Observed: {{api.1.DateObserved}} <br/><br/>
+
 
 {% endblock %}
