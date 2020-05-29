@@ -3,18 +3,31 @@
 
 {% block content %}
 
-<h1> Hello </h1> 
+
+
 <br/>
 
-{{api.0}} <br/><br/>
 
-Air Quality Idex: {{api.0.AQI}} <br/>
-Area: {{api.0.ReportingArea}} <br/>
-AQI Rating: {{api.0.Category.Name}} <br/><br/>
+{% if api %}
+	{% if api == "API Error...." %}
+		There was an error with the api, please try again.
+	{% else %}
 
-{{api.1}} <br/><br/>
+<div class="jumbotron {{category_color}}">
+  <h1 class="display-4">{{api.0.Category.Name}}</h1>
+  <p class="lead"> {{api.0.ReportingArea}} AQI: {{api.0.AQI}}</p>
+  <p>Date Observed: {{api.1.DateObserved}}</p>
 
-Date Observed: {{api.1.DateObserved}} <br/><br/>
+  <!-- Eval AQI and display relevant Health Warnings/-->
+
+<p> {{ category_description }} </p>
+	
+</div>
+
+		
+		 <br/><br/>
+	{% endif %}
+{% endif %}
 
 
 {% endblock %}
