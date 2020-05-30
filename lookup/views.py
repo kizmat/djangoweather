@@ -56,7 +56,7 @@ def home(request):
 			category_description = "The AQI is between 51 and 100. Air quality is acceptable; however, pollution in this range may pose a moderate health concern for a very small number of individuals. People who are unusually sensitive to ozone or particle pollution may experience respiratory symptoms."
 			category_color = "moderate"
 		elif api[0]['Category']['Name'] == "Unhealthy for Sensitive Groups":
-			category_description = " When AQI values are between 101 and 150, members of sensitive groups may experience health effects, but the general public is unlikely to be affected. •	Ozone: People with lung disease, children, older adults, and people who are active outdoors are considered sensitive and therefore at greater risk.•	Particle pollution: People with heart or lung disease, older adults,1 and children are considered sensitive and therefore at greater risk." 
+			category_description = " When AQI values are between 101 and 150, members of sensitive groups may experience health effects, but the general public is unlikely to be affected. Ozone: People with lung disease, children, older adults, and people who are active outdoors are considered sensitive and therefore at greater risk. Particle pollution: People with heart or lung disease, older adults, and children are considered sensitive and therefore at greater risk." 
 			category_color = "usg"
 		elif api[0]['Category']['Name'] == "Unhealthy":
 			category_description = "Everyone may begin to experience health effects when AQI values are between 151 and 200. Members of sensitive groups may experience more serious health effects. " 
