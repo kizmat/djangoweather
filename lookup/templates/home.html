@@ -8,6 +8,9 @@
 
 <br/>
 
+{% if zipcode %}
+	{{ zipcode }}
+{% endif %}
 
 {% if api %}
 	{% if api == "API Error...." %}
@@ -15,9 +18,9 @@
 	{% else %}
 
 <div class="jumbotron {{category_color}}">
-  <h1 class="display-4">{{api.0.Category.Name}}</h1>
-  <p class="lead"> {{api.0.ReportingArea}} AQI: {{api.0.AQI}}</p>
-  <p>Date Observed: {{api.1.DateObserved}}</p>
+  <h1 class="display-5"> {{api.0.ReportingArea}} AQI: {{api.0.AQI}}</h1>
+  <h2 class=" display-5"> {{api.0.Category.Name}} </h2>
+  <p>Date Observed: {{api.0.DateObserved}}</p>
 
   <!-- Eval AQI and display relevant Health Warnings/-->
 
